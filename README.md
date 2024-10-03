@@ -34,7 +34,7 @@ Clone the repository:
 
 bash
 Copy code
-git clone https://github.com/yourusername/schoolsync.git
+git clone https://github.com/mcgarretronald/SchoolSync-Backend
 cd schoolsync
 Create a virtual environment:
 
@@ -64,7 +64,7 @@ Run the server:
 bash
 Copy code
 python manage.py runserver
-Visit http://127.0.0.1:8000 to explore the application!
+ coming soon to explore the application!
 
 Usage
 Parent Sign-Up: Parents can easily create an account and link their children to manage their profiles.
