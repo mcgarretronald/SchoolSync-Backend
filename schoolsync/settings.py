@@ -26,7 +26,10 @@ SECRET_KEY = 'django-insecure-1_3j3cw@8prm-x0dwqpf$ijvgiololy1&)19f8!sdi=r&zsje&
 DEBUG = True
 
 ALLOWED_HOSTS = []
+import os
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 # Application definition
 
@@ -37,8 +40,22 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'api',
+    'rest_framework',
+    'subject',
+    'user',
+    'rest_framework_simplejwt.token_blacklist',
 ]
 
+AUTHENTICATION_BACKENDS = [
+    'user.backends.EmailBackend',  # Custom email backend
+    'django.contrib.auth.backends.ModelBackend',  # Default backend
+]
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
+}
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
